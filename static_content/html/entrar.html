@@ -1,0 +1,116 @@
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>
+		Js Grid - Inicio
+	</title>
+	<script type='application/javascript' src='/js/bdd.js'></script>
+	<link href="/css/estilo.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+	<div style="margin:-8px">
+		<table bgcolor="#FFFFFF" height="25" width="100%" border="0" cellpadding="0" cellspacing="0" style="margin-bottom:8px">
+			<tr>
+				<td align="center">
+					<table bgcolor="#FFFFFF" height="25" border="0" cellpadding="0" cellspacing="0">
+						<tr>
+							<td>
+								<img src="/image/logopeque.png" height="25">
+							</td>
+							<td width="10%">
+							</td>
+							<td bgcolor="#BBBBBB">
+								&nbsp
+							</td>
+							<td bgcolor="#BBBBBB">
+								<img src="/image/inicio.png" height="20">
+							</td>
+							<td bgcolor="#BBBBBB">
+								Inicio&nbsp
+							</td>
+							<td width="10">
+							</td>
+							<td>
+								<a href="/html/presentacion.html"><img src="/image/about.png" height="17"></a>
+							</td>
+							<td width="100">
+								<a href="/html/presentacion.html">Sobre Js Grid</a>
+							</td>
+							<td width="10">
+							</td>
+							<td>
+								<a href="https://twitter.com/Js_Grid"><img src="/image/twitter.png" height="17"></a>
+							</td>
+							<td>
+								<a href="https://twitter.com/Js_Grid">Twitter</a>
+							</td>
+							<td width="10">
+							</td>
+							<td>
+								<a href="mailto:aapjsgrid@gmail.com"><img src="/image/contacto.png" height="20"></a>
+							</td>
+							<td>
+								<a href="mailto:aapjsgrid@gmail.com">Contacto</a>
+							</td>
+							<td>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+		</table>
+	</div>
+	<table style="margin-top:40;margin-left:10%;margin-right:10%">
+		<tr valign="top">
+			<td valign="middle" width="60%">
+				<div id="texto">
+					Muchas gracias por interesarte por este proyecto! Para poder entrar primero debes logearte o si todavía no lo has hecho darte de alta. Es muy rápido y sencillo darse de alta, en menos de un minuto lo tienes hecho, solo tienes que introducir tu nombre o alias, tu dirección de correo habitual y opcionalmente tu nombre de usuario de twitter (sin la @), así de fácil!
+					<br>
+					Vamos anímate a ceder unos ciclos de computación!
+					<br><br>
+				</div>
+			</td>
+			<td width="3%">
+			</td>
+			<td width="37%">
+				<center>
+					<div id='formulario_login'>
+						<table bgcolor="#E2E2E2" cellpadding="10" cellspacing="10">
+							<tr>
+								<td>
+									Nombre de usuario:<br>
+									<input type='text' name='nombre_login' id='nombre_login' placeholder="Nombre / Nick" size='25'><br>
+									Correo electrónico:<br>
+									<input type='text' name='mail_login' id='mail_login' placeholder="tu@correo.es" size='25'><br>
+									<center>
+										<button style='width:90%; height:25px' onclick=location.href="http://localhost:8080/html/web_cliente.html">Entrar</button>
+									</center>
+								</td>
+							</tr>
+						</table>
+					</div>
+					<br><br>
+					<div id='formulario_signup'>
+						<table bgcolor="#E2E2E2" cellpadding="10" cellspacing="10">
+							<tr>
+								<td>
+									Nombre de usuario:<br>
+									<input type='text' name='nombre_signup' id='nombre_signup' placeholder="Nombre / Nick"  size='25'><br>
+									Correo electrónico:<br>
+									<input type='text' name='mail_signup' id='mail_signup' placeholder="tu@correo.es" size='25'><br>
+									Twitter(Opcional):<br>
+									<input type='text' name='twitter_signup' id='twitter_signup' placeholder="Cuenta Twitter sin @" size='25'><br>
+									<center>
+										<button style='width:90%; height:25px' onclick='signup()'/>Darse de alta</button>
+									</center>
+								</td>
+							</tr>
+						</table>
+					</div>
+				</center>
+			</td>
+		</tr>
+	</table>
+</body>
+</head>
+</html>

@@ -1,0 +1,136 @@
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>
+		Js Grid - Presentación
+	</title>
+	<script type='application/javascript' src='/js/bdd.js'></script>
+	<link href="/css/estilo.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+	<div style="margin:-8px">
+		<table bgcolor="#FFFFFF" height="25" width="100%" border="0" cellpadding="0" cellspacing="0" style="margin-bottom:8px">
+			<tr>
+				<td align="center">
+					<table bgcolor="#FFFFFF" height="25" border="0" cellpadding="0" cellspacing="0">
+						<tr>
+							<td>
+								<img src="/image/logopeque.png" height="25">
+							</td>
+							<td width="10%">
+							</td>
+							<td>
+								<a href="/html/entrar.html"><img src="/image/inicio.png" height="20"></a>
+							</td>
+							<td>
+								<a href="/html/entrar.html">Inicio</a>
+							</td>
+							<td width="10">
+							</td>
+							<td bgcolor="#BBBBBB">
+								&nbsp
+							</td>
+							<td bgcolor="#BBBBBB">
+								<img src="/image/about.png" height="17">
+							</td>
+							<td width="100" bgcolor="#BBBBBB">
+								Sobre Js Grid
+							</td>
+							<td width="10">
+							</td>
+							<td>
+								<a href="https://twitter.com/Js_Grid"><img src="/image/twitter.png" height="17"></a>
+							</td>
+							<td>
+								<a href="https://twitter.com/Js_Grid">Twitter</a>
+							</td>
+							<td width="10">
+							</td>
+							<td>
+								<a href="mailto:aapjsgrid@gmail.com"><img src="/image/contacto.png" height="20"></a>
+							</td>
+							<td>
+								<a href="mailto:aapjsgrid@gmail.com">Contacto</a>
+							</td>
+							<td>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+		</table>
+	</div>
+	<table style="margin-top:40;margin-left:10%;margin-right:10%">
+		<tr valign="top">
+			<td>
+				<div id="texto">
+					<center><font size="6"><b><u>Js Grid, sistema GRID basado en JavaScript</font></b></u></center><br>
+					Proyecto JS_GRID, sistema de computación GRID basado en JavaScript.
+					<br><br>
+					<b><u><font size="4">Motivación y descripción del proyecto:</b></u></font>
+					<br>
+					Aunque en la actualidad existen ya muchos y maduros proyectos de computación distribuida, la idea de JS_GRID surge tras detectar la necesidad en todos los casos de instalar programas en el lado del cliente, con la consiguiente dependencia de la arquitectura y la incomodidad de la instalación.
+					<br><br>
+					Sin embargo, JS_GRID permitiría la realización de computación distribuida en todos los dispositivos que tengan navegador, incluyendo smartphones, tablets, TVs, videoconsolas..., sin más necesidad que acceder a una web y ejecutar código JavaScript. Llegados al punto de analizar las estructuras y la forma de hacer computación distribuida nos hemos centrado en considerar dicha distribución para una única tarea ejecutada del lado del servidor, que en nuestro caso será la obtención de una contraseña WIFI por diccionario o fuerza bruta.
+					<br><br>
+					<b><u><font size="4">Estructura:</b></u></font>
+					<br>
+					Hemos definido la estructura de este proyecto de tipo cliente-servidor de esta forma:
+					<br><br>
+					Cliente basado en JavaScript, que ejecutará las tareas recibidas.
+					<br>
+					<b>Cómo se reciben esas tareas?</b>
+					<br>
+					El servidor dividirá un proceso que está ejecutando en varios, y por cada cliente conectado dicho servidor enviará una estructura de datos JSON para que el cliente la ejecute. Dicha estructura contendrá la clave PMK capturada previamente así como intervalos de contraseñas para ir probando por fuerza bruta.
+					<br><br>
+					<b>Qué hace exactamente el cliente?</b>
+					<br>
+					El programa cliente será un código en una web, a la que cualquier interesado puede acceder para ceder parte de su capacidad computacional para ser malas personas y robarle el WIFI a alguien. El cliente ejecutará un código JAVASCRIPT en el cual se debe implementar el algortimo de descrifrado usado en dicha red WIFI (PBKDF2) . Es decir ir probando con cada intervalo proporcionado si el hash obtenido por el cliente coincide con el enviado por el servidor. Además, también hemos pensado en añadir la opción de que la botnet se limite a comparar PMK's sin que se tenga que aplicar el algoritmo (es muy lento), a través de claves precalculadas.
+					<br><br>
+					<b>Muy bien, pero cómo informo al servidor?</b>
+					<br>
+					Estamos considerando pequeñas estructuras sockets() para que el cliente envíe información al servidor en los siguientes casos:
+					<br>
+					- He encontrado la contraseña!.
+					<br>
+					- He terminado el rango recibido y no he tenido suerte :( .
+					<br>
+					- Informar de errores.
+					<br>
+					- Informe de desconexión.
+					<br>
+					La información enviada también tendrá estructura JSON.
+					<br><br>
+					<b>Consideraciones adicionales en el cliente:</b>
+					<br>
+					- La web incluirá una prueba de rendimiento del sistema , ya que se trata de mejorar el tiempo de ejecución de la tarea. Sería completamente ineficiente si se tardara más de lo que se tardaría sólo con el servidor ejecutando dicha tarea.
+					<br>
+					- Por otra parte estamos considerando incluir un cliente twitter , el cual cada X intervalo de tiempo envie un mensaje con algún tipo de frikada tales como :
+					<br>
+					"Contraseña encontrada...todos a robar!"
+					<br>
+					"El vecino es muy tonto, su protección no sirve de nada..Muajaja"
+					<br>
+					"Ya casi la tenemos.....ya casi..."
+					<br>
+					<br>
+					<b><u><font size="4">NODE.JS:</b></u></font>
+					<br>
+					Node.js es el entorno de programación que se usará para programar la parte del servidor. Se ha elegido este entorno por 2 motivos principales:
+					<br>
+					- Es un entorno en la capa del servidor, pensado para este tipo de situaciones, y da muchas facilidades.
+					<br>
+					- Utiliza JavaScript, que es el tema central de la asignatura.
+					<br>
+					MONGODB
+					<br>
+					Habrá una gestión de clientes la cual contendrá los clientes activos, el reparto de intervalos que se ha hecho a cada uno, los intervalos procesados, y el tiempo desde la última conexión. Esto se hará con una base de datos NoSQL, porque MongoDB guarda estructuras de datos en documentos JSON vistos en la asignatura.
+					<br><br>
+					Enlace al <a href="https://code.google.com/p/aap-ugr/source/browse/#git%2FProyectos%2FJS_GRID">repositorio</a>
+				</div>
+			</td>
+		</tr>
+	</table>
+</body>
+</head>
+</html>
